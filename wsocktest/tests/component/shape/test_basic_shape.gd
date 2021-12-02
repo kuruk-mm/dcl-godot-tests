@@ -5,6 +5,8 @@ var utils = TestUtils.new()
 
 
 func test_shape_creation():
+	assert_true(false,
+			"test fail")
 	# Create a scene with a entity
 
 	var scene = autoqfree(Server.SCENE.instance())
