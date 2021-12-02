@@ -11,14 +11,14 @@ jobs:
       - name: Run tests
         run: |
           cd wsocktest
-          alias gut='godot --path $PWD -d -s addons/gut/gut_cmdln.gd -gconfig=.gut_editor_config.json'
+          alias godot='/godot-bin/godot_server.x11.opt.tools.64'
           alias gut='godot --path $PWD -d -s addons/gut/gut_cmdln.gd -gconfig=.gut_editor_config.json'
           gut
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
-          files: wsocktest/output.xml
+          files: wsocktest/godot-testresults.xml
       - name: Export
         run: |
           cd wsocktest
